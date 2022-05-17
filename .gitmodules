@@ -1,0 +1,15 @@
+[submodule "submodules/micropython-lib"]
+	path = submodules/micropython-lib
+	url = https://github.com/micropython/micropython-lib.git
+[submodule "submodules/syslog-py"]
+	path = submodules/syslog-py
+	url = https://github.com/maciejbudzyn/syslog-py.git
+[submodule "submodules/micropython-usyslog"]
+	path = submodules/micropython-usyslog
+	url = https://github.com/kfricke/micropython-usyslog.git
+[submodule "submodules/Adafruit_CircuitPython_SPS30"]
+	path = submodules/Adafruit_CircuitPython_SPS30
+	url = https://github.com/kevinjwalters/Adafruit_CircuitPython_SPS30.git
+[submodule "submodules/Socket"]
+	path = submodules/Socket
+	url = https://github.com/anecdata/Socket
