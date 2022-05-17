@@ -1,0 +1,8 @@
+# .gitignore
+# Author: Mike Weiblen <mew@mew.cx>
+
+*.swp
+*~
+__pycache__/
+
+# vim: set sw=4 ts=8 et ic ai:
