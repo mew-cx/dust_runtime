@@ -29,8 +29,8 @@ class Syslog:
   """A syslog client that logs to a remote server.
 
   Example:
-  &gt;&gt;&gt; log = Syslog(host="foobar.example")
-  &gt;&gt;&gt; log.send("hello", Level.WARNING)
+      log = Syslog(host="foobar.example")
+      log.send("hello", Level.WARNING)
   """
   def __init__(self,
                host="localhost",
@@ -43,8 +43,8 @@ class Syslog:
 
   def send(self, message, level):
     "Send a syslog message to remote host using UDP."
-    data = "&lt;%d&gt;%s" % (level + self.facility*8, message)
-    self.socket.sendto(data, (self.host, self.port))
+    data = "<%d>%s" % (level + (self.facility << 3), message)
+    self.socket.sendto(data.encode('utf-8'), (self.host, self.port))
 
   def warn(self, message):
     "Send a syslog warning message."
