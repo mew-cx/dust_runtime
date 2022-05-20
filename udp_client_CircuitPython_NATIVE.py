@@ -1,3 +1,6 @@
+# udp_client_CircuitPython_NATIVE.py
+# Excerpted from https://github.com/anecdata/Socket
+
 import wifi
 import socketpool
 import ipaddress
