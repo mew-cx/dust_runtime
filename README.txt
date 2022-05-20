@@ -16,7 +16,7 @@ If you put it in a file syslog_client.py you can use it as a module.
 ```
     import syslog_client
     log = syslog_client.Syslog("remote-host-name")
-    log.send("howdy", syslog_client.WARNING)
+    log.send("howdy", syslog_client.Severity.WARNING)
 ```
 
 You can easily extend the class in several ways.

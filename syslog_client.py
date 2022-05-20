@@ -20,8 +20,8 @@ class Facility:
   LOCAL0, LOCAL1, LOCAL2, LOCAL3, \
   LOCAL4, LOCAL5, LOCAL6, LOCAL7 = range(16, 24)
 
-class Level:
-  "Syslog levels"
+class Severity:
+  "Syslog severities"
   EMERG, ALERT, CRIT, ERR, \
   WARNING, NOTICE, INFO, DEBUG = range(8)
 
@@ -41,9 +41,9 @@ class Syslog:
     self.facility = facility
     self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-  def send(self, message, level):
+  def send(self, message, severity):
     "Send a syslog message to remote host using UDP."
-    data = "<%d> %s" % (level + self.facility*8, message)
+    data = "<%d> %s" % (severity + self.facility*8, message)
     self.socket.sendto(data.encode('utf-8'), (self.host, self.port))
 
   def warn(self, message):
