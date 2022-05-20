@@ -1,13 +1,15 @@
 """
 Remote syslog client.
-
-Works by sending UDP messages to a remote syslog server. The remote server
-must be configured to accept logs from the network.
-
 License: PUBLIC DOMAIN
 Author: Christian Stigen Larsen
 
-For more information, see RFC 3164.
+For more information, see RFC 3164, 5424.
+-----------------------------------------------------------------------------
+#! /usr/bin/env python
+import syslog_client
+log = syslog_client.Syslog(host="pink", facility=syslog_client.Facility.LOCAL3)
+log.send("udp_syslog : Hi to pink LOCAL3.INFO", syslog_client.Severity.INFO)
+-----------------------------------------------------------------------------
 """
 
 import socket
@@ -26,12 +28,7 @@ class Severity:
   WARNING, NOTICE, INFO, DEBUG = range(8)
 
 class Syslog:
-  """A syslog client that logs to a remote server.
-
-  Example:
-  >>> log = Syslog(host="foobar.example")
-  >>> log.send("hello", Level.WARNING)
-  """
+  "A syslog client that logs to a remote server via UDP."
   def __init__(self,
                host="localhost",
                port=514,
@@ -43,19 +40,5 @@ class Syslog:
 
   def send(self, message, severity):
     "Send a syslog message to remote host using UDP."
-    data = "<%d> %s" % (severity + self.facility*8, message)
+    data = "<%d> %s" % (severity + (self.facility << 3), message)
     self.socket.sendto(data.encode('utf-8'), (self.host, self.port))
-
-  def warn(self, message):
-    "Send a syslog warning message."
-    self.send(message, Level.WARNING)
-
-  def notice(self, message):
-    "Send a syslog notice message."
-    self.send(message, Level.NOTICE)
-
-  def error(self, message):
-    "Send a syslog error message."
-    self.send(message, Level.ERR)
-
-  # ... add your own stuff here
