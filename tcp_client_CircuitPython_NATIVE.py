@@ -7,7 +7,7 @@ import ipaddress
 import time
 from secrets import secrets
 
-HOST = "192.168.10.10"
+HOST = "192.168.1.1"
 PORT = 5000
 TIMEOUT = 5
 INTERVAL = 5
