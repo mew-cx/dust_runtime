@@ -1,1 +1,2 @@
-print("Hello World!")
+#import i2c_power_disable
+import i2c_power_enable

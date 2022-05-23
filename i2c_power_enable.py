@@ -7,3 +7,5 @@ i2c_power.switch_to_input()
 time.sleep(0.01)  # wait for default value to settle
 rest_level = i2c_power.value
 i2c_power.switch_to_output(value=(not rest_level))
+
+print("##### i2c_power_enable.py has run")
