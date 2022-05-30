@@ -19,7 +19,7 @@ def FormatRFC5424( facility = Facility.USER,
                    procid = None,
                    msgid = None,
                    structured_data = None,
-                   msg = None)
+                   msg = None) :
         return "<{}>1 {} {} {} {} {} {} {}".format(
             (facility << 3) + severity,
             timestamp or "-",
@@ -60,5 +60,5 @@ with pool.socket(pool.AF_INET, pool.SOCK_STREAM) as s:
         timestamp = "now",
         app_name = "dust",
         msgid = "data1",
-        msg = "This is the real message here"))
+        msg = "This is the real message here")
     sent = s.send(logmsg)
