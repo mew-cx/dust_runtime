@@ -30,7 +30,6 @@ def FormatRFC5424( facility = Facility.USER,
             structured_data or "-",
             msg or "")
 
-print( FormatRFC5424( app_name="Foo" ))
 #############################################################################
 
 import wifi
@@ -42,12 +41,13 @@ HOST = "pink"
 PORT = 514
 TIMEOUT = 5  #None
 
+print("connecting to ", secrets["ssid"])
 wifi.radio.connect(secrets["ssid"], secrets["password"])
 print("Self IP", wifi.radio.ipv4_address)
 
 pool = socketpool.SocketPool(wifi.radio)
 server_ipv4 = ipaddress.ip_address(pool.getaddrinfo(HOST, PORT)[0][4][0])
-print("Server ping", server_ipv4, wifi.radio.ping(server_ipv4), "ms")
+print("Server ping", server_ipv4, ": ", wifi.radio.ping(server_ipv4), "ms")
 
 with pool.socket(pool.AF_INET, pool.SOCK_STREAM) as s:
     s = pool.socket(pool.AF_INET, pool.SOCK_STREAM)
@@ -59,6 +59,12 @@ with pool.socket(pool.AF_INET, pool.SOCK_STREAM) as s:
         severity = Severity.INFO,
         timestamp = "now",
         app_name = "dust",
-        msgid = "data1",
+        hostname = "1.2.3.4",
+        procid = "PROCid",
+        msgid = "MSGid",
+        structured_data = "S-D",
         msg = "This is the real message here")
+    print(repr(logmsg))
+
     sent = s.send(logmsg)
+    print("sent length : %d\n" % sent)
