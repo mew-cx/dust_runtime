@@ -18,15 +18,17 @@ def FormatRFC5424( facility = Facility.USER,
                    msgid = None,
                    structured_data = None,
                    msg = None) :
-        return "<{}>1 {} {} {} {} {} {} {}\n".format(
-            (facility << 3) + severity,
-            timestamp or "-",
-            hostname or "-",
-            app_name or "-",
-            procid or "-",
-            msgid or "-",
-            structured_data or "-",
-            msg or "")
+    result = "<{}>1 {} {} {} {} {} {} {}\n".format(
+        (facility << 3) + severity,
+        timestamp or "-",
+        hostname or "-",
+        app_name or "-",
+        procid or "-",
+        msgid or "-",
+        structured_data or "-",
+        msg or "")
+    print(repr(result))
+    return result
 
 #############################################################################
 
@@ -55,7 +57,7 @@ with pool.socket(pool.AF_INET, pool.SOCK_STREAM) as s:
     print("connecting to socket")
     s.connect((HOST, PORT))
 
-    logmsg = FormatRFC5424(
+    sent = s.send(FormatRFC5424(
         facility = Facility.LOCAL3,
         severity = Severity.INFO,
         timestamp = "2022-05-31T22:33:44Z",
@@ -64,18 +66,14 @@ with pool.socket(pool.AF_INET, pool.SOCK_STREAM) as s:
         procid = "PROCid",
         msgid = "MSGid",
         structured_data = "[x]",
-        msg = "This is the real message here")
-    print(repr(logmsg))
-    sent = s.send(logmsg)
-    print("sent length : %d\n" % sent)
+        msg = "wibble"))
+    print("sent length : %d" % sent)
 
-    logmsg = FormatRFC5424(
+    sent = s.send(FormatRFC5424(
         facility = Facility.LOCAL3,
         severity = Severity.NOTICE,
-        timestamp = "2022-05-31T22:33:55Z",
+        timestamp = "2022-06-01T00:11:22Z",
         hostname = wifi.radio.ipv4_address,
         app_name = "dust2",
-        msg = "Data goes here")
-    print(repr(logmsg))
-    sent = s.send(logmsg)
-    print("sent length : %d\n" % sent)
+        msg = ">>>Data goes here<<<"))
+    print("sent length : %d" % sent)
