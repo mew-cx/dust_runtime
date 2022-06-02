@@ -1,4 +1,4 @@
-# syslog_client_rfc5424.py
+# logger_rfc5424.py
 
 class Facility:
     "Syslog facilities"
@@ -9,24 +9,27 @@ class Severity:
     "Syslog severities"
     EMERG,ALERT,CRIT,ERR,WARNING,NOTICE,INFO,DEBUG = range(0,8)
 
-def FormatRFC5424( facility = Facility.USER,
-                   severity = Severity.NOTICE,
-                   timestamp = None,
-                   hostname = None,
-                   app_name = None,
-                   procid = None,
-                   msgid = None,
-                   structured_data = None,
-                   msg = None) :
-    result = "<{}>1 {} {} {} {} {} {} {}\n".format(
+def FormatRFC5424(facility = Facility.USER,
+                  severity = Severity.NOTICE,
+                  timestamp = None,
+                  hostname = None,
+                  app_name = None,
+                  procid = None,
+                  msgid = None,
+                  structured_data = None,
+                  msg = None) :
+    result = "<{}>1 {} {} {} {} {} {}".format(
         (facility << 3) + severity,
         timestamp or "-",
         hostname or "-",
         app_name or "-",
         procid or "-",
         msgid or "-",
-        structured_data or "-",
-        msg or "")
+        structured_data or "-"
+    result = result.encode()
+    if msg is not None:
+        result += b" " + msg
+    result += b"\n"
     print(repr(result))
     return result
 
@@ -61,19 +64,10 @@ with pool.socket(pool.AF_INET, pool.SOCK_STREAM) as s:
         facility = Facility.LOCAL3,
         severity = Severity.INFO,
         timestamp = "2022-05-31T22:33:44Z",
-        hostname = "1.2.3.4",
+        hostname = wifi.radio.ipv4_address,
         app_name = "dust",
         procid = "PROCid",
         msgid = "MSGid",
         structured_data = "[x]",
         msg = "wibble"))
-    print("sent length : %d" % sent)
-
-    sent = s.send(FormatRFC5424(
-        facility = Facility.LOCAL3,
-        severity = Severity.NOTICE,
-        timestamp = "2022-06-01T00:11:22Z",
-        hostname = wifi.radio.ipv4_address,
-        app_name = "dust2",
-        msg = ">>>Data goes here<<<"))
     print("sent length : %d" % sent)
