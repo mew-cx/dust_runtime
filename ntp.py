@@ -2,27 +2,41 @@ import wifi
 import socketpool
 import struct
 import time
+#import ipaddress
+from secrets import secrets
 
-# connect to wifi
-print("Connecting to Wifi")
-wifi.radio.connect("mySSID", "myPASS")
+HOST = "pool.ntp.org"
+PORT = 123
+TIMEOUT = 5  #None
+
+print("connecting to AP", secrets["ssid"])
+wifi.radio.connect(secrets["ssid"], secrets["password"])
+print("my ipaddr", wifi.radio.ipv4_address)
+
 pool = socketpool.SocketPool(wifi.radio)
 
-# make socket
-print("Creating socket")
-sock = pool.socket(pool.AF_INET, pool.SOCK_DGRAM)
+#server_ipv4 = ipaddress.ip_address(pool.getaddrinfo(HOST, PORT)[0][4][0])
+#print("server ipaddr", server_ipv4)
+#print("ping time", wifi.radio.ping(server_ipv4), "ms")
 
-# Fill packet
+print("socket()")
+sock = pool.socket(pool.AF_INET, pool.SOCK_DGRAM)
+#sock.settimeout(TIMEOUT)
+
+# build packet
 packet = bytearray(48)
 packet[0] = 0b00100011  # Not leap second, NTP version 4, Client mode
-NTP_TO_UNIX_EPOCH = 2208988800  # 1970-01-01 00:00:00
 
-print("Sending packet")
-sock.sendto(packet, ("pool.ntp.org", 123))
+print("sendto()")
+sock.sendto(packet, (HOST, PORT))
 
+print("recvfrom()")
 size, address = sock.recvfrom_into(packet)
-print("Received packet")
+print("size", size, "address", address)
 
 seconds = struct.unpack_from("!I", packet, offset=len(packet) - 8)[0]
-print("Address:", address)
-print("Time:", time.localtime(seconds - NTP_TO_UNIX_EPOCH))
+print("seconds", seconds)
+NTP_TO_UNIX_EPOCH = 2208988800  # 1970-01-01 00:00:00
+print(time.localtime(seconds - NTP_TO_UNIX_EPOCH))
+
+sock.close()

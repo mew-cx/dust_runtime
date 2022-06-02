@@ -1,14 +1,4 @@
 code.py output:
-Connecting to Wifi
-Traceback (most recent call last):
-File "code.py", line 2, in <module>
-File "ntp.py", line 8, in <module>
-ValueError: WiFi password must be between 8 and 63 characters
-
-
-
-
-code.py output:
 Traceback (most recent call last):
 File "code.py", line 1, in <module>
 File "esp32spi_udp_client.py", line 8, in <module>
