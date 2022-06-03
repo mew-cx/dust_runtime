@@ -1,6 +1,7 @@
 # logger_rfc5424.py
 # https://www.rfc-editor.org/rfc/rfc5424.html
 
+import time
 import rtc
 
 class Facility:
@@ -16,7 +17,7 @@ class Severity:
 
 def GetRtcTimestamp():
     "See RFC5424 section 6.2.3"
-    t = rtc.RTC.datetime
+    t = time.localtime()   #rtc.RTC.datetime
     print(repr(t))
     result = "{}-{:02}-{:02}T{:02}:{:02}:{:02}Z".format(
         t.tm_year, t.tm_mon, t.tm_mday, t.tm_hour, t.tm_min, t.tm_sec)
@@ -55,7 +56,7 @@ def FormatRFC5424(facility = Facility.USER,
     enc = "utf-8-sig"
     enc = "ascii"      # we're using ASCII
     if msg:
-        result += b" " + msg.encoding(enc)
+        result += b" " + msg.encode(enc)
 
     print(repr(result))
     return result
@@ -94,6 +95,5 @@ with pool.socket(pool.AF_INET, pool.SOCK_STREAM) as s:
         app_name = "dust",
         procid = "PROCid",
         msgid = "MSGid",
-        structured_data = "[x]",
-        msg = "wibble"))
+        msg = "rtc "+ GetRtcTimestamp()))
     print("sent length : %d" % sent)
