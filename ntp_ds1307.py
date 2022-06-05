@@ -1,3 +1,5 @@
+# ntp_ds1307.py -- http://mew.cx/ 2022-06-04
+
 import wifi
 import socketpool
 import struct
@@ -9,34 +11,38 @@ HOST = "pool.ntp.org"
 PORT = 123
 TIMEOUT = 5  #None
 
-print("connecting to AP", secrets["ssid"])
-wifi.radio.connect(secrets["ssid"], secrets["password"])
-print("my ipaddr", wifi.radio.ipv4_address)
+def GetNtp():
+    print("connecting to AP", secrets["ssid"])
+    wifi.radio.connect(secrets["ssid"], secrets["password"])
+    print("my ipaddr", wifi.radio.ipv4_address)
 
-pool = socketpool.SocketPool(wifi.radio)
+    pool = socketpool.SocketPool(wifi.radio)
 
-#server_ipv4 = ipaddress.ip_address(pool.getaddrinfo(HOST, PORT)[0][4][0])
-#print("server ipaddr", server_ipv4)
-#print("ping time", wifi.radio.ping(server_ipv4), "ms")
+    #server_ipv4 = ipaddress.ip_address(pool.getaddrinfo(HOST, PORT)[0][4][0])
+    #print("server ipaddr", server_ipv4)
+    #print("ping time", wifi.radio.ping(server_ipv4), "ms")
 
-print("socket()")
-sock = pool.socket(pool.AF_INET, pool.SOCK_DGRAM)
-#sock.settimeout(TIMEOUT)
+    print("socket()")
+    with pool.socket(pool.AF_INET, pool.SOCK_DGRAM) as sock:
+        #sock.settimeout(TIMEOUT)
 
-# build packet
-packet = bytearray(48)
-packet[0] = 0b00100011  # Not leap second, NTP version 4, Client mode
+        # build packet
+        packet = bytearray(48)
+        packet[0] = 0b00100011  # Not leap second, NTP version 4, Client mode
 
-print("sendto()")
-sock.sendto(packet, (HOST, PORT))
+        print("sendto()")
+        sock.sendto(packet, (HOST, PORT))
 
-print("recvfrom()")
-size, address = sock.recvfrom_into(packet)
-print("size", size, "address", address)
+        print("recvfrom()")
+        size, address = sock.recvfrom_into(packet)
+        print("size", size, "address", address)
 
-seconds = struct.unpack_from("!I", packet, offset=len(packet) - 8)[0]
-print("seconds", seconds)
-NTP_TO_UNIX_EPOCH = 2208988800  # 1970-01-01 00:00:00
-print(time.localtime(seconds - NTP_TO_UNIX_EPOCH))
+        seconds = struct.unpack_from("!I", packet, offset=len(packet) - 8)[0]
+        #print("seconds", seconds)
+        NTP_TO_UNIX_EPOCH = 2208988800  # 1970-01-01 00:00:00
+        return time.localtime(seconds - NTP_TO_UNIX_EPOCH)
 
-sock.close()
+t = GetNtp()
+print("GetNtp():",repr(t))
+
+# eof
