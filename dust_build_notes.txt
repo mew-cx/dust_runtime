@@ -2,25 +2,25 @@ notes about dust sensor system
 2022-04-20 mew@mew.cx
 
 backplane
-        SDA     SCL     GND     5V      3v3     SCK     MOSI
-uc      grn     yel     ora     red     brn     vio     gry
-htu     red     brn     ora     -       yel     -       -
-rtc     blu     vio     wht     blk     -       -       -
-mpl     grn     yel     red     brn     -       -       -
-sps30   wht     vio     blk&grn red     -       -       -
-led     -       -       wht     red     -       brn     blk
+        SDA     SCL     GND     5V      3v3     SCK     MOSI   Description
+fesp32  grn     yel     ora     red     brn     vio     gry    Feather ESP32-S2
+htu     red     brn     ora     -       yel     -       -      humidity
+rtc     blu     vio     wht     blk     -       -       -      realtime clock
+mpl     grn     yel     red     brn     -       -       -      barometer
+sps30   wht     vio     blk&grn red     -       -       -      particle
+led     -       -       wht     red     -       brn     blk    dotstar strip
 
 
 Main processor : Feather ESP32-S2, proplabel 3058
 https://www.adafruit.com/product/5000
 running CircuitPython 7.2.5
-        brown   3v3 out
-        orange  gnd
-        violet  sck (spi)
-        gray    mosi (spi)
-        red     vbus in (5v0)
-        yellow  scl (i2c)
-        green   sda (i2c)
+3       brown   3v3 out
+4       orange  gnd
+11      violet  sck (spi)
+12      gray    mosi (spi)
+17      green   sda (i2c)
+18      yellow  scl (i2c)
+26      red     vbus in (5v0)
 
 mpm3610 : 5v0 buck regulator
 https://www.adafruit.com/product/4739
