@@ -2,7 +2,7 @@
 
 # Don't commit these CircuitPython files to git:
 boot_out.txt
-secrets.py
+secrets*
 
 # Other cruft to keep out of git repos:
 __pycache__/
