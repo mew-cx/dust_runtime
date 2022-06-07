@@ -1,1 +1,1 @@
-print("Hello World!")
+import ds1307_simpletest
