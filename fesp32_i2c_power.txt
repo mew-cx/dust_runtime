@@ -1,0 +1,34 @@
+https://learn.adafruit.com/adafruit-esp32-s2-feather/i2c-power-management
+
+I2C Power Management
+
+Feather ESP32-S2 I2C Setup
+
+The Feather ESP32-S2 only has one I2C port, also known as board.I2C(), that is on pins SDA and SCL and shared with the STEMMA QT connector.
+
+It does have a built in battery monitor that is listening on address 0x0B, so that address cannot be used by other devices.
+
+The Feather ESP32-S2 also has a power 'switch' on the I2C port connected to GPIO 7. On Rev B of the PCB, you have to set the pin LOW to turn on the I2C power and pullups. On Rev C of the PCB, you have to set the pin HIGH. This is a little confusing but to make it simple we have a bit of code that will activate the power port by setting the control pin (GPIO 7) to an OUTPUT and the opposite of the 'rest state' before accessing the I2C port
+
+If you are using 7.2.4 or higher version of CircuitPython for the ESP32-S2 Feather, the I2C port will be automatically activated/powered properly on boot, whether you have rev B or rev C!
+
+This code snippet shows ENABLING the I2C power and pullups, it works on both rev B and rev C
+
+    import time
+    import digitalio
+    import board
+
+    i2c_power = digitalio.DigitalInOut(board.I2C_POWER)
+    i2c_power.switch_to_input()
+    time.sleep(0.01)  # wait for default value to settle
+    rest_level = i2c_power.value
+    i2c_power.switch_to_output(value=(not rest_level))
+
+This code snippet shows DISABLING the I2C power and pullups, it works on both rev B and rev C
+
+    import time
+    import digitalio
+    import board
+
+    i2c_power = digitalio.DigitalInOut(board.I2C_POWER)
+    i2c_power.switch_to_input()
