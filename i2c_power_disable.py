@@ -1,4 +1,3 @@
-import time
 import digitalio
 import board
 
