@@ -14,6 +14,15 @@ HOST = "pool.ntp.org"
 PORT = 123
 TIMEOUT = 5  #None
 
+def DayOfWeek(wday):
+    # https://docs.python.org/3/library/time.html#time.struct_time
+    # describes tm_wday as "range [0, 6], Monday is 0"
+    return ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")[wday]
+
+def NtpToUnixEpoch(seconds):
+    # Convert 1900-01-01T00:00:00 to 1970-01-01T00:00:00
+    return (seconds - 2208988800)
+
 def GetNtp():
     print("connecting to AP", secrets["ssid"])
     wifi.radio.connect(secrets["ssid"], secrets["password"])
@@ -40,16 +49,18 @@ def GetNtp():
         size, address = sock.recvfrom_into(packet)
         print("size", size, "address", address)
 
-        seconds = struct.unpack_from("!I", packet, offset=len(packet) - 8)[0]
-        NTP_TO_UNIX_EPOCH = 2208988800  # 1970-01-01 00:00:00
-        return time.localtime(seconds - NTP_TO_UNIX_EPOCH)
+        ntp_secs = struct.unpack_from("!I", packet, offset=len(packet) - 8)[0]
+        return time.localtime(NtpToUnixEpoch(ntp_secs))
+
 
 t = GetNtp()
-print("GetNtp():\t",repr(t))
+print(t)
 
 i2c = board.I2C()
 ds = adafruit_ds1307.DS1307(i2c)
 ds.datetime = t
-print("ds.datetime:\t", ds.datetime)
+print("{} {}-{:02}-{:02} {:02}:{:02}:{:02}".format(
+    DayOfWeek(t.tm_wday),
+    t.tm_year, t.tm_mon, t.tm_mday, t.tm_hour, t.tm_min, t.tm_sec))
 
 # eof
