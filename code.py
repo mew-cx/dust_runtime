@@ -1,1 +1,1 @@
-print("Hello World!")
+import htu21d_simpletest
