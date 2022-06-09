@@ -1,1 +1,1 @@
-print("Hello World!")
+import mpl3115a2_simpletest
