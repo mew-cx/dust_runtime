@@ -35,7 +35,7 @@ def FormatRFC5424(facility = Facility.USER,
                   msg = None) :
     "See RFC5424 section 6"
 
-    # Sect 6.2: HEADER MUST be ASCII
+    # Sect 9.1: RFC5424's VERSION is "1"
     header = "<{}>1 {} {} {} {} {} ".format(
         (facility << 3) + severity,
         timestamp or GetRtcTimestamp() or "-",
@@ -45,16 +45,17 @@ def FormatRFC5424(facility = Facility.USER,
         msgid or "-")
 
     # Sect 6.3: STRUCTURED-DATA has complicated encoding requirements,
-    # so we expect STRUCTURED-DATA to already be properly encoded.
+    # so we expect it to already be properly encoded.
     if not structured_data:
         structured_data = b"-"
 
+    # Sect 6.2: HEADER MUST be ASCII
     result = header.encode("ascii") + structured_data
 
     # Sect 6.4: MSG SHOULD be UTF-8, but MAY be other encoding.
     # If using UTF-8, MSG MUST start with Unicode BOM.
-    enc = "utf-8-sig"
-    enc = "ascii"      # we're using ASCII
+    #enc = "utf-8-sig"
+    enc = "ascii"       # we're using ASCII
     if msg:
         result += b" " + msg.encode(enc)
 
