@@ -23,7 +23,7 @@ if False:
 
 while True:
     t = rtc.datetime
-    print("{} {}-{:02}-{:02} {:02}:{:02}:{:02}".format(
+    print("{} {}-{:02}-{:02}T{:02}:{:02}:{:02}Z".format(
         DayOfWeek(t.tm_wday),
         t.tm_year, t.tm_mon, t.tm_mday, t.tm_hour, t.tm_min, t.tm_sec))
     time.sleep(1.5)
