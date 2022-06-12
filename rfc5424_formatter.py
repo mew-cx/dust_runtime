@@ -93,10 +93,11 @@ with pool.socket(pool.AF_INET, pool.SOCK_STREAM) as s:
     sent = s.send(FormatRFC5424(
         facility = Facility.LOCAL3,
         severity = Severity.INFO,
-        timestamp = FormatTimestamp(time.localtime())
+        timestamp = FormatTimestamp(time.localtime()),
         hostname = wifi.radio.ipv4_address,
         app_name = "dust",
         procid = "procID",
         msgid = "msgID",
         msg = "rtc "+ FormatTimestamp(time.localtime())
+        ))
     print("sent length : %d" % sent)
