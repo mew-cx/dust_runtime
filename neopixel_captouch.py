@@ -8,35 +8,32 @@ from rainbowio import colorwheel
 touch1 = touchio.TouchIn(board.TOUCH1)
 touch2 = touchio.TouchIn(board.TOUCH2)
 
-pixels = neopixel.NeoPixel(board.NEOPIXEL, 4, auto_write=False)
-pixels.brightness = 0.03
+NUM_PIXELS = 4
+pixels = neopixel.NeoPixel(board.NEOPIXEL, NUM_PIXELS, auto_write=False)
 
+BRIGHTNESS_INCREMENT = 1.0/20.0
+pixels.brightness = BRIGHTNESS_INCREMENT
 
 def rainbow(color_index):
-    for led in range(4):
-        pixel_index = (led * 256 // 4) + color_index
-        pixels[led] = colorwheel(pixel_index & 255)
+    for led in range(NUM_PIXELS):
+        pixel_index = (led * 256 // NUM_PIXELS) + color_index
+        pixels[led] = colorwheel(pixel_index & 0xff)
     pixels.show()
 
-
-touched = time.monotonic()
+last_touched = time.monotonic()
 color = 0
 while True:
-    color = color + 1
-    if color > 255:
-        color = 0
+    color += 1
+    color &= 0xff
 
     rainbow(color)
 
-    if time.monotonic() - touched < 0.15:
+    if time.monotonic() - last_touched < 0.15:
         continue
+
     if touch1.value:
-        # Touch pad 1 to increase the brightness.
-        pixels.brightness += 0.05
-        pixels.show()
-        touched = time.monotonic()
+        pixels.brightness += BRIGHTNESS_INCREMENT
     elif touch2.value:
-        # Touch pad 2 to decrease the brightness.
-        pixels.brightness -= 0.05
-        pixels.show()
-        touched = time.monotonic()
+        pixels.brightness -= BRIGHTNESS_INCREMENT
+
+    last_touched = time.monotonic()
