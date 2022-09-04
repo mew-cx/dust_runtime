@@ -298,5 +298,39 @@ AnalogOut: PB31 TFT_BACKLIGHT in use
 
 =============================================================================
 
+neopixel_trinkey_m0__9b493b6b4c51535020312e37080c17ff
+
+Adafruit CircuitPython 7.3.2 on 2022-07-20; Adafruit NeoPixel Trinkey M0 with samd21e18
+>>> import pin_map_capabilities
+microcontroller.pin.PA03 --> board.TOUCH1
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PA03 name 'analogio' is not defined
+AnalogOut: PA03 name 'analogio' is not defined
+
+microcontroller.pin.PA05 --> board.NEOPIXEL
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PA05 name 'analogio' is not defined
+AnalogOut: PA05 name 'analogio' is not defined
+
+microcontroller.pin.PA07 --> board.TOUCH2
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PA07 name 'analogio' is not defined
+AnalogOut: PA07 name 'analogio' is not defined
+
+microcontroller.pin.PA22 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: PA22 name 'analogio' is not defined
+AnalogOut: PA22 name 'analogio' is not defined
+
+microcontroller.pin.PA23 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: PA23 name 'analogio' is not defined
+AnalogOut: PA23 name 'analogio' is not defined
+
 =============================================================================
 
