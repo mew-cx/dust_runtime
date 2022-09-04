@@ -1,0 +1,302 @@
+pyportal__2c46af263353385320202035111011ff.txt
+
+Adafruit CircuitPython 7.3.2 on 2022-07-20; Adafruit PyPortal with samd51j20
+>>> import pin_map_capabilities
+microcontroller.pin.PA00 --> board.TFT_RESET
+DigitalIn: PA00 TFT_RESET in use
+DigitalOut: PA00 TFT_RESET in use
+AnalogIn: PA00 TFT_RESET in use
+AnalogOut: PA00 TFT_RESET in use
+
+microcontroller.pin.PA01 --> board.SD_CARD_DETECT
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PA01 Pin does not have ADC capabilities
+AnalogOut: PA01 AnalogOut not supported on given pin
+
+microcontroller.pin.PA02 --> board.A0 board.AUDIO_OUT board.SPEAKER
+DigitalIn: False
+DigitalOut: False
+AnalogIn: 20608
+AnalogOut: success
+
+microcontroller.pin.PA03 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: 65520
+AnalogOut: PA03 AnalogOut not supported on given pin
+
+microcontroller.pin.PA04 --> board.A1 board.D3
+DigitalIn: False
+DigitalOut: False
+AnalogIn: 3392
+AnalogOut: PA04 AnalogOut not supported on given pin
+
+microcontroller.pin.PA05 --> board.A4 board.D4
+DigitalIn: False
+DigitalOut: False
+AnalogIn: 864
+AnalogOut: success
+
+microcontroller.pin.PA06 --> board.TOUCH_YU
+DigitalIn: True
+DigitalOut: False
+AnalogIn: 65520
+AnalogOut: PA06 AnalogOut not supported on given pin
+
+microcontroller.pin.PA07 --> board.A2 board.LIGHT
+DigitalIn: False
+DigitalOut: False
+AnalogIn: 3456
+AnalogOut: PA07 AnalogOut not supported on given pin
+
+microcontroller.pin.PA08 -->
+DigitalIn: PA08 PA08 in use
+DigitalOut: PA08 PA08 in use
+AnalogIn: PA08 PA08 in use
+AnalogOut: PA08 PA08 in use
+
+microcontroller.pin.PA09 -->
+DigitalIn: PA09 PA09 in use
+DigitalOut: PA09 PA09 in use
+AnalogIn: PA09 PA09 in use
+AnalogOut: PA09 PA09 in use
+
+microcontroller.pin.PA10 -->
+DigitalIn: PA10 PA10 in use
+DigitalOut: PA10 PA10 in use
+AnalogIn: PA10 PA10 in use
+AnalogOut: PA10 PA10 in use
+
+microcontroller.pin.PA11 -->
+DigitalIn: PA11 PA11 in use
+DigitalOut: PA11 PA11 in use
+AnalogIn: PA11 PA11 in use
+AnalogOut: PA11 PA11 in use
+
+microcontroller.pin.PA12 --> board.MOSI
+DigitalIn: True
+DigitalOut: False
+AnalogIn: PA12 Pin does not have ADC capabilities
+AnalogOut: PA12 AnalogOut not supported on given pin
+
+microcontroller.pin.PA13 --> board.SCK
+DigitalIn: True
+DigitalOut: False
+AnalogIn: PA13 Pin does not have ADC capabilities
+AnalogOut: PA13 AnalogOut not supported on given pin
+
+microcontroller.pin.PA14 --> board.MISO
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PA14 Pin does not have ADC capabilities
+AnalogOut: PA14 AnalogOut not supported on given pin
+
+microcontroller.pin.PA15 --> board.ESP_RTS
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PA15 Pin does not have ADC capabilities
+AnalogOut: PA15 AnalogOut not supported on given pin
+
+microcontroller.pin.PA16 --> board.LCD_DATA0
+DigitalIn: PA16 LCD_DATA0 in use
+DigitalOut: PA16 LCD_DATA0 in use
+AnalogIn: PA16 LCD_DATA0 in use
+AnalogOut: PA16 LCD_DATA0 in use
+
+microcontroller.pin.PA17 --> board.LCD_DATA1
+DigitalIn: PA17 LCD_DATA1 in use
+DigitalOut: PA17 LCD_DATA1 in use
+AnalogIn: PA17 LCD_DATA1 in use
+AnalogOut: PA17 LCD_DATA1 in use
+
+microcontroller.pin.PA18 --> board.LCD_DATA2
+DigitalIn: PA18 LCD_DATA2 in use
+DigitalOut: PA18 LCD_DATA2 in use
+AnalogIn: PA18 LCD_DATA2 in use
+AnalogOut: PA18 LCD_DATA2 in use
+
+microcontroller.pin.PA19 --> board.LCD_DATA3
+DigitalIn: PA19 LCD_DATA3 in use
+DigitalOut: PA19 LCD_DATA3 in use
+AnalogIn: PA19 LCD_DATA3 in use
+AnalogOut: PA19 LCD_DATA3 in use
+
+microcontroller.pin.PA20 --> board.LCD_DATA4
+DigitalIn: PA20 LCD_DATA4 in use
+DigitalOut: PA20 LCD_DATA4 in use
+AnalogIn: PA20 LCD_DATA4 in use
+AnalogOut: PA20 LCD_DATA4 in use
+
+microcontroller.pin.PA21 --> board.LCD_DATA5
+DigitalIn: PA21 LCD_DATA5 in use
+DigitalOut: PA21 LCD_DATA5 in use
+AnalogIn: PA21 LCD_DATA5 in use
+AnalogOut: PA21 LCD_DATA5 in use
+
+microcontroller.pin.PA22 --> board.LCD_DATA6
+DigitalIn: PA22 LCD_DATA6 in use
+DigitalOut: PA22 LCD_DATA6 in use
+AnalogIn: PA22 LCD_DATA6 in use
+AnalogOut: PA22 LCD_DATA6 in use
+
+microcontroller.pin.PA23 --> board.LCD_DATA7
+DigitalIn: PA23 LCD_DATA7 in use
+DigitalOut: PA23 LCD_DATA7 in use
+AnalogIn: PA23 LCD_DATA7 in use
+AnalogOut: PA23 LCD_DATA7 in use
+
+microcontroller.pin.PA27 --> board.SPEAKER_ENABLE
+DigitalIn: True
+DigitalOut: False
+AnalogIn: PA27 Pin does not have ADC capabilities
+AnalogOut: PA27 AnalogOut not supported on given pin
+
+microcontroller.pin.PA30 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: PA30 Pin does not have ADC capabilities
+AnalogOut: PA30 AnalogOut not supported on given pin
+
+microcontroller.pin.PA31 -->
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PA31 Pin does not have ADC capabilities
+AnalogOut: PA31 AnalogOut not supported on given pin
+
+microcontroller.pin.PB00 --> board.TOUCH_YD
+DigitalIn: True
+DigitalOut: False
+AnalogIn: 58848
+AnalogOut: PB00 AnalogOut not supported on given pin
+
+microcontroller.pin.PB01 --> board.TOUCH_XL
+DigitalIn: True
+DigitalOut: False
+AnalogIn: 44928
+AnalogOut: PB01 AnalogOut not supported on given pin
+
+microcontroller.pin.PB02 --> board.SDA
+DigitalIn: True
+DigitalOut: False
+AnalogIn: 64800
+AnalogOut: PB02 AnalogOut not supported on given pin
+
+microcontroller.pin.PB03 --> board.SCL
+DigitalIn: True
+DigitalOut: False
+AnalogIn: 64768
+AnalogOut: PB03 AnalogOut not supported on given pin
+
+microcontroller.pin.PB04 --> board.TFT_RD
+DigitalIn: PB04 TFT_RD in use
+DigitalOut: PB04 TFT_RD in use
+AnalogIn: PB04 TFT_RD in use
+AnalogOut: PB04 TFT_RD in use
+
+microcontroller.pin.PB05 --> board.TFT_RS
+DigitalIn: PB05 TFT_RS in use
+DigitalOut: PB05 TFT_RS in use
+AnalogIn: PB05 TFT_RS in use
+AnalogOut: PB05 TFT_RS in use
+
+microcontroller.pin.PB06 --> board.TFT_CS
+DigitalIn: PB06 TFT_CS in use
+DigitalOut: PB06 TFT_CS in use
+AnalogIn: PB06 TFT_CS in use
+AnalogOut: PB06 TFT_CS in use
+
+microcontroller.pin.PB07 --> board.TFT_TE
+DigitalIn: False
+DigitalOut: False
+AnalogIn: 192
+AnalogOut: PB07 AnalogOut not supported on given pin
+
+microcontroller.pin.PB08 --> board.TOUCH_XR
+DigitalIn: True
+DigitalOut: False
+AnalogIn: 2112
+AnalogOut: PB08 AnalogOut not supported on given pin
+
+microcontroller.pin.PB09 --> board.TFT_DC board.TFT_WR
+DigitalIn: PB09 TFT_WR in use
+DigitalOut: PB09 TFT_WR in use
+AnalogIn: PB09 TFT_WR in use
+AnalogOut: PB09 TFT_WR in use
+
+microcontroller.pin.PB10 -->
+DigitalIn: PB10 PB10 in use
+DigitalOut: PB10 PB10 in use
+AnalogIn: PB10 PB10 in use
+AnalogOut: PB10 PB10 in use
+
+microcontroller.pin.PB11 -->
+DigitalIn: PB11 PB11 in use
+DigitalOut: PB11 PB11 in use
+AnalogIn: PB11 PB11 in use
+AnalogOut: PB11 PB11 in use
+
+microcontroller.pin.PB12 --> board.ESP_TX
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PB12 Pin does not have ADC capabilities
+AnalogOut: PB12 AnalogOut not supported on given pin
+
+microcontroller.pin.PB13 --> board.ESP_RX
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PB13 Pin does not have ADC capabilities
+AnalogOut: PB13 AnalogOut not supported on given pin
+
+microcontroller.pin.PB14 --> board.ESP_CS
+DigitalIn: True
+DigitalOut: False
+AnalogIn: PB14 Pin does not have ADC capabilities
+AnalogOut: PB14 AnalogOut not supported on given pin
+
+microcontroller.pin.PB15 --> board.ESP_GPIO0
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PB15 Pin does not have ADC capabilities
+AnalogOut: PB15 AnalogOut not supported on given pin
+
+microcontroller.pin.PB16 --> board.ESP_BUSY
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PB16 Pin does not have ADC capabilities
+AnalogOut: PB16 AnalogOut not supported on given pin
+
+microcontroller.pin.PB17 --> board.ESP_RESET
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PB17 Pin does not have ADC capabilities
+AnalogOut: PB17 AnalogOut not supported on given pin
+
+microcontroller.pin.PB22 --> board.NEOPIXEL
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PB22 Pin does not have ADC capabilities
+AnalogOut: PB22 AnalogOut not supported on given pin
+
+microcontroller.pin.PB23 --> board.D13 board.L board.LED
+DigitalIn: False
+DigitalOut: False
+AnalogIn: PB23 Pin does not have ADC capabilities
+AnalogOut: PB23 AnalogOut not supported on given pin
+
+microcontroller.pin.PB30 --> board.SD_CS
+DigitalIn: True
+DigitalOut: False
+AnalogIn: PB30 Pin does not have ADC capabilities
+AnalogOut: PB30 AnalogOut not supported on given pin
+
+microcontroller.pin.PB31 --> board.TFT_BACKLIGHT
+DigitalIn: PB31 TFT_BACKLIGHT in use
+DigitalOut: PB31 TFT_BACKLIGHT in use
+AnalogIn: PB31 TFT_BACKLIGHT in use
+AnalogOut: PB31 TFT_BACKLIGHT in use
+
+=============================================================================
+
+=============================================================================
+
