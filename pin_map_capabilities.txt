@@ -334,3 +334,295 @@ AnalogOut: PA23 name 'analogio' is not defined
 
 =============================================================================
 
+circuitplayground_bluefruit__4fbbe3af9d091c8d
+
+microcontroller.pin.P0_00 -->
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_00 Pin does not have ADC capabilities
+AnalogOut: P0_00 AnalogOut functionality not supported
+
+microcontroller.pin.P0_01 -->
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_01 Pin does not have ADC capabilities
+AnalogOut: P0_01 AnalogOut functionality not supported
+
+microcontroller.pin.P0_02 --> board.A1 board.D6 board.SCK
+DigitalIn: False
+DigitalOut: False
+AnalogIn: 1392
+AnalogOut: P0_02 AnalogOut functionality not supported
+
+microcontroller.pin.P0_03 --> board.A3 board.D10 board.MOSI
+DigitalIn: False
+DigitalOut: False
+AnalogIn: 736
+AnalogOut: P0_03 AnalogOut functionality not supported
+
+microcontroller.pin.P0_04 --> board.A4 board.D3 board.SCL
+DigitalIn: False
+DigitalOut: False
+AnalogIn: 736
+AnalogOut: P0_04 AnalogOut functionality not supported
+
+microcontroller.pin.P0_05 --> board.A5 board.D2 board.SDA
+DigitalIn: False
+DigitalOut: False
+AnalogIn: 752
+AnalogOut: P0_05 AnalogOut functionality not supported
+
+microcontroller.pin.P0_06 --> board.D35 board.POWER_SWITCH
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_06 Pin does not have ADC capabilities
+AnalogOut: P0_06 AnalogOut functionality not supported
+
+microcontroller.pin.P0_07 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P0_07 Pin does not have ADC capabilities
+AnalogOut: P0_07 AnalogOut functionality not supported
+
+microcontroller.pin.P0_08 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P0_08 Pin does not have ADC capabilities
+AnalogOut: P0_08 AnalogOut functionality not supported
+
+microcontroller.pin.P0_09 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P0_09 Pin does not have ADC capabilities
+AnalogOut: P0_09 AnalogOut functionality not supported
+
+microcontroller.pin.P0_10 -->
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_10 Pin does not have ADC capabilities
+AnalogOut: P0_10 AnalogOut functionality not supported
+
+microcontroller.pin.P0_11 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P0_11 Pin does not have ADC capabilities
+AnalogOut: P0_11 AnalogOut functionality not supported
+
+microcontroller.pin.P0_12 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P0_12 Pin does not have ADC capabilities
+AnalogOut: P0_12 AnalogOut functionality not supported
+
+microcontroller.pin.P0_13 --> board.D8 board.NEOPIXEL
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_13 Pin does not have ADC capabilities
+AnalogOut: P0_13 AnalogOut functionality not supported
+
+microcontroller.pin.P0_14 --> board.D1 board.TX
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_14 Pin does not have ADC capabilities
+AnalogOut: P0_14 AnalogOut functionality not supported
+
+microcontroller.pin.P0_15 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P0_15 Pin does not have ADC capabilities
+AnalogOut: P0_15 AnalogOut functionality not supported
+
+microcontroller.pin.P0_16 --> board.MICROPHONE_DATA
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_16 Pin does not have ADC capabilities
+AnalogOut: P0_16 AnalogOut functionality not supported
+
+microcontroller.pin.P0_17 --> board.MICROPHONE_CLOCK
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_17 Pin does not have ADC capabilities
+AnalogOut: P0_17 AnalogOut functionality not supported
+
+microcontroller.pin.P0_18 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P0_18 Pin does not have ADC capabilities
+AnalogOut: P0_18 AnalogOut functionality not supported
+
+microcontroller.pin.P0_19 -->
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_19 Pin does not have ADC capabilities
+AnalogOut: P0_19 AnalogOut functionality not supported
+
+microcontroller.pin.P0_20 -->
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_20 Pin does not have ADC capabilities
+AnalogOut: P0_20 AnalogOut functionality not supported
+
+microcontroller.pin.P0_21 -->
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_21 Pin does not have ADC capabilities
+AnalogOut: P0_21 AnalogOut functionality not supported
+
+microcontroller.pin.P0_22 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P0_22 Pin does not have ADC capabilities
+AnalogOut: P0_22 AnalogOut functionality not supported
+
+microcontroller.pin.P0_23 -->
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_23 Pin does not have ADC capabilities
+AnalogOut: P0_23 AnalogOut functionality not supported
+
+microcontroller.pin.P0_24 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P0_24 Pin does not have ADC capabilities
+AnalogOut: P0_24 AnalogOut functionality not supported
+
+microcontroller.pin.P0_25 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P0_25 Pin does not have ADC capabilities
+AnalogOut: P0_25 AnalogOut functionality not supported
+
+microcontroller.pin.P0_26 --> board.AUDIO board.D12 board.SPEAKER
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P0_26 Pin does not have ADC capabilities
+AnalogOut: P0_26 AnalogOut functionality not supported
+
+microcontroller.pin.P0_27 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P0_27 Pin does not have ADC capabilities
+AnalogOut: P0_27 AnalogOut functionality not supported
+
+microcontroller.pin.P0_28 --> board.A8 board.LIGHT
+DigitalIn: False
+DigitalOut: False
+AnalogIn: 9632
+AnalogOut: P0_28 AnalogOut functionality not supported
+
+microcontroller.pin.P0_29 --> board.A2 board.D9 board.MISO
+DigitalIn: False
+DigitalOut: False
+AnalogIn: 1200
+AnalogOut: P0_29 AnalogOut functionality not supported
+
+microcontroller.pin.P0_30 --> board.A6 board.D0 board.RX
+DigitalIn: False
+DigitalOut: False
+AnalogIn: 608
+AnalogOut: P0_30 AnalogOut functionality not supported
+
+microcontroller.pin.P0_31 --> board.A9 board.TEMPERATURE
+DigitalIn: True
+DigitalOut: False
+AnalogIn: 32912
+AnalogOut: P0_31 AnalogOut functionality not supported
+
+microcontroller.pin.P1_00 -->
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P1_00 Pin does not have ADC capabilities
+AnalogOut: P1_00 AnalogOut functionality not supported
+
+microcontroller.pin.P1_01 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_01 Pin does not have ADC capabilities
+AnalogOut: P1_01 AnalogOut functionality not supported
+
+microcontroller.pin.P1_02 --> board.BUTTON_A board.D4
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_02 Pin does not have ADC capabilities
+AnalogOut: P1_02 AnalogOut functionality not supported
+
+microcontroller.pin.P1_03 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_03 Pin does not have ADC capabilities
+AnalogOut: P1_03 AnalogOut functionality not supported
+
+microcontroller.pin.P1_04 --> board.SPEAKER_ENABLE
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_04 Pin does not have ADC capabilities
+AnalogOut: P1_04 AnalogOut functionality not supported
+
+microcontroller.pin.P1_05 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_05 Pin does not have ADC capabilities
+AnalogOut: P1_05 AnalogOut functionality not supported
+
+microcontroller.pin.P1_06 --> board.D7 board.SLIDE_SWITCH
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_06 Pin does not have ADC capabilities
+AnalogOut: P1_06 AnalogOut functionality not supported
+
+microcontroller.pin.P1_07 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_07 Pin does not have ADC capabilities
+AnalogOut: P1_07 AnalogOut functionality not supported
+
+microcontroller.pin.P1_08 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_08 Pin does not have ADC capabilities
+AnalogOut: P1_08 AnalogOut functionality not supported
+
+microcontroller.pin.P1_09 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_09 Pin does not have ADC capabilities
+AnalogOut: P1_09 AnalogOut functionality not supported
+
+microcontroller.pin.P1_10 --> board.ACCELEROMETER_SDA
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_10 Pin does not have ADC capabilities
+AnalogOut: P1_10 AnalogOut functionality not supported
+
+microcontroller.pin.P1_11 -->
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_11 Pin does not have ADC capabilities
+AnalogOut: P1_11 AnalogOut functionality not supported
+
+microcontroller.pin.P1_12 --> board.ACCELEROMETER_SCL
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_12 Pin does not have ADC capabilities
+AnalogOut: P1_12 AnalogOut functionality not supported
+
+microcontroller.pin.P1_13 --> board.ACCELEROMETER_INTERRUPT
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P1_13 Pin does not have ADC capabilities
+AnalogOut: P1_13 AnalogOut functionality not supported
+
+microcontroller.pin.P1_14 --> board.D13 board.L board.LED
+DigitalIn: False
+DigitalOut: False
+AnalogIn: P1_14 Pin does not have ADC capabilities
+AnalogOut: P1_14 AnalogOut functionality not supported
+
+microcontroller.pin.P1_15 --> board.BUTTON_B board.D5
+DigitalIn: True
+DigitalOut: False
+AnalogIn: P1_15 Pin does not have ADC capabilities
+AnalogOut: P1_15 AnalogOut functionality not supported
+
+=============================================================================
+
