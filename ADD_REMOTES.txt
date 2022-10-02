@@ -1,0 +1,9 @@
+git remote add soundgin git@github.com:mew-cx/CircuitPython_Soundgin.git
+git remote add speakjet git@github.com:mew-cx/CircuitPython_SpeakJet.git
+git remote add wx       git@github.com:mew-cx/CircuitPython_dust_wx_station.git
+git remote add hinv     git@github.com:mew-cx/CircuitPython_hinv.git
+git remote add keybow   git@github.com:mew-cx/CircuitPython_keybow_pico.git
+git remote add rfc      git@github.com:mew-cx/CircuitPython_rfc5424.git
+git remote add smart    git@github.com:mew-cx/CircuitPython_smart_display.git
+git remote add uchip    git@github.com:mew-cx/CircuitPython_uChipPowerManagement.git
+git remote add stuff    git@github.com:mew-cx/circuitpython_stuff.git
